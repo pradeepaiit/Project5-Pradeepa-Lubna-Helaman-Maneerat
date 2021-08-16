@@ -60,3 +60,15 @@
     display: flex;
     justify-content: center;
  }
+ #next-page {
+  float:right;
+ }
+
+ .home-nxt {
+padding:30px;
+
+ }
+
+ 
+
+ 
