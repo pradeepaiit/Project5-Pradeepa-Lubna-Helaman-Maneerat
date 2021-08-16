@@ -9,8 +9,8 @@ function getMovies(page) {
       const movies = data.results
       for (let i = 0; i < movies.length; i++) {
         const movie = movies[i]
-        const movieHTML = $("<div>")
-          .append(`<h2 class="movie-title">${movie.title}</h2>`)
+        const movieHTML = $("<div>", {class:"movie-tile"})
+          .append(`<h5 class="movie-title">${movie.title}`)
           .append(
             `<img src="${image_URL + movie.poster_path}" alt="${
               movie.title
@@ -28,8 +28,20 @@ function getMovies(page) {
 let page = 1
 getMovies(page)
 
-$("#next-page").click(() => {
-  page = page + 1
-  $("#insert-here").empty()
-  getMovies(page)
-})
+for (let i = 0; i < 10; i++){
+
+  if (i != 0) {
+    $("#next-page").click(() => {
+      page = page + 1
+      $("#insert-here").empty()
+      getMovies(page)
+    })
+  } else {
+    $("#previous-page").click(() => {
+      page = page - 1
+      $("#insert-here").empty()
+      getMovies(page)
+    })
+  }
+
+}

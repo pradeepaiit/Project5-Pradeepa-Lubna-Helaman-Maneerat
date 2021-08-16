@@ -7,13 +7,22 @@
 }
 
 .movie-title {
-    color: red;
+    color:#0d6efd;
+    
   }
-  
+
   #insert-here {
     display: flex;
+    justify-content: space-evenly;
     flex-wrap:wrap;
+    margin-right:auto;
+    margin-left: auto;
   }
+
+  .movie-tile{
+    padding:15px;
+  }
+
   header {
     display: flex;
     justify-content: space-between;
@@ -61,12 +70,27 @@
     justify-content: center;
  }
  #next-page {
-  float:right;
+  padding:10px;
+  color: white;
+  background-color:#0d6efd;
+  border-radius: 5px;
+  border: none;
+ }
+ #previous-page {
+  padding:10px;
+  color: white;
+  background-color:#0d6efd;
+  border-radius: 5px;
+  border: none;
  }
 
  .home-nxt {
-padding:30px;
+padding:50px;
+ }
 
+ .flex {
+  display: flex;
+  justify-content: space-between;
  }
 
  
