@@ -1,0 +1,17 @@
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS rating;
+
+CREATE TABLE IF NOT EXISTS users (
+    id SERIAL PRIMARY KEY,
+    lastname VARCHAR(200) NOT NULL,
+    firstname VARCHAR(200) NOT NULL,
+    email_address VARCHAR(200) UNIQUE NOT NULL,
+    password VARCHAR(60) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS rating (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES users (id),
+    rating INTEGER NOT NULL,
+    movie_id INTEGER REFERENCES API(id)
+);
