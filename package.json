@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "create-db": "psql -U postgres -f sql/create-db.sql",
-    "create-tables": "psql -U postgres -d mrcoffee -f sql/create-tables.sql",
-    "seed-tables": "psql -U postgres -d mrcoffee -f sql/seed-tables.sql",
+    "create-tables": "psql -U postgres -d movieclub -f sql/create-tables.sql",
+    "seed-tables": "psql -U postgres -d movieclub -f sql/seed-tables.sql",
     "dev": "nodemon -r dotenv/config index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
