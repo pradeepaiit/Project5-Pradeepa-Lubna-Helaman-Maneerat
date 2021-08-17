@@ -1,1 +1,2 @@
+DROP DATABASE IF EXISTS movieclub;
 CREATE DATABASE movieclub;
