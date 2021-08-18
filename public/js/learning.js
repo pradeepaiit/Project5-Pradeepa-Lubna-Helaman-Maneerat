@@ -6,6 +6,7 @@ function getMovies(page) {
   $.getJSON(base_URL + "/discover/movie" + api_key + "&page=" + page)
     .then(data => {
       console.log(data)
+      
       const movies = data.results
       for (let i = 0; i < movies.length; i++) {
         const movie = movies[i]
@@ -24,24 +25,29 @@ function getMovies(page) {
       $("#insert-here").append(`<p>${err.responseJSON.status_message}</p>`)
     })
 }
-
 let page = 1
 getMovies(page)
 
-for (let i = 0; i < 10; i++){
-
-  if (i != 0) {
-    $("#next-page").click(() => {
-      page = page + 1
-      $("#insert-here").empty()
-      getMovies(page)
-    })
-  } else {
-    $("#previous-page").click(() => {
-      page = page - 1
-      $("#insert-here").empty()
-      getMovies(page)
-    })
-  }
-
+if(page = 1){
+  $("#previous-page").hide()
 }
+
+  $("#next-page").click(() => {
+    page = page + 1
+    if(page > 1){
+      $("#previous-page").show()
+    }
+    $("#insert-here").empty()
+    getMovies(page)
+    console.log(page)
+  })
+  
+  $("#previous-page").click(() => {
+    page = page - 1
+    if(page < 2){
+      $("#previous-page").hide()
+    }
+    $("#insert-here").empty()
+    getMovies(page)
+    console.log(page)
+  })
