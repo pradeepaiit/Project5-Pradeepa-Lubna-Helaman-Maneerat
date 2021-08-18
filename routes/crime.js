@@ -1,8 +1,8 @@
 const express = require('express')
 const router = express.Router()
 
-router.get('/', (req, res) => {
-  res.render('pages/home', {
+router.get('/crime', (req, res) => {
+  res.render('pages/crime', {
     firstName: req.session.firstname
   })
 })

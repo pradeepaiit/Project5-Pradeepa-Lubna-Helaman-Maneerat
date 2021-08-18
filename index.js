@@ -20,13 +20,13 @@ app.use(express.static('public'))
 const session = require("express-session")
 const twohours = 1000 * 60 * 60 * 2
 app.use(
-	session({
-		name: "session_id",
-		secret: process.env.SESSION_SECRET,
-		saveUninitialized: false /* Forces a session that is "uninitialized" to be saved to the store.  */,
-		cookie: { maxAge: twohours },
-		resave: false /* Forces the session to be saved back to the session store, even if the session was never modified during the request. */,
-	})
+  session({
+    name: "session_id",
+    secret: process.env.SESSION_SECRET,
+    saveUninitialized: false /* Forces a session that is "uninitialized" to be saved to the store.  */,
+    cookie: { maxAge: twohours },
+    resave: false /* Forces the session to be saved back to the session store, even if the session was never modified during the request. */,
+  })
 )
 
 //Port specified
@@ -48,6 +48,16 @@ app.use("/signup", signupRouter)
 //logout route
 const logoutRouter = require("./routes/logout")
 app.use("/logout", logoutRouter)
+
+//action route
+const crimeRouter = require("./routes/crime")
+app.use("/", crimeRouter)
+//thriller route
+const thrillerRouter = require("./routes/thriller")
+app.use("/", thrillerRouter)
+//comedy route
+const comedyRouter = require("./routes/comedy")
+app.use("/", comedyRouter)
 
 app.listen(PORT, () => {
   console.log(`App is listening to: http://localhost:${PORT}`)
