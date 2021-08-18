@@ -6,17 +6,18 @@ function getMovies(page) {
   $.getJSON(base_URL + "/discover/movie" + api_key + "&page=" + page)
     .then(data => {
       console.log(data)
-      
+
       const movies = data.results
       for (let i = 0; i < movies.length; i++) {
         const movie = movies[i]
-        const movieHTML = $("<div>", {class:"movie-tile"})
+        const movieHTML = $("<div>", { class: "movie-tile" })
           .append(`<h5 class="movie-title">${movie.title}`)
+          .append(`<p class="ave-rating">Overall rating (# votes):</p>`)
           .append(
-            `<img src="${image_URL + movie.poster_path}" alt="${
-              movie.title
+            `<img src="${image_URL + movie.poster_path}" alt="${movie.title
             } poster">`
           )
+
         $("#insert-here").append(movieHTML)
       }
     })
@@ -28,24 +29,24 @@ function getMovies(page) {
 let page = 1
 getMovies(page)
 
-if(page = 1){
+if (page = 1) {
   $("#previous-page").hide()
 }
 
-  $("#next-page").click(() => {
-    page = page + 1
-    if(page > 1){
-      $("#previous-page").show()
-    }
-    $("#insert-here").empty()
-    getMovies(page)
-  })
-  
-  $("#previous-page").click(() => {
-    page = page - 1
-    if(page < 2){
-      $("#previous-page").hide()
-    }
-    $("#insert-here").empty()
-    getMovies(page)
-  })
+$("#next-page").click(() => {
+  page = page + 1
+  if (page > 1) {
+    $("#previous-page").show()
+  }
+  $("#insert-here").empty()
+  getMovies(page)
+})
+
+$("#previous-page").click(() => {
+  page = page - 1
+  if (page < 2) {
+    $("#previous-page").hide()
+  }
+  $("#insert-here").empty()
+  getMovies(page)
+})
