@@ -45,6 +45,10 @@ app.use("/login", loginRouter)
 const signupRouter = require("./routes/signup")
 app.use("/signup", signupRouter)
 
+//logout route
+const logoutRouter = require("./routes/logout")
+app.use("/logout", logoutRouter)
+
 app.listen(PORT, () => {
   console.log(`App is listening to: http://localhost:${PORT}`)
 })

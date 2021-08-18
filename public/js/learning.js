@@ -39,7 +39,6 @@ if(page = 1){
     }
     $("#insert-here").empty()
     getMovies(page)
-    console.log(page)
   })
   
   $("#previous-page").click(() => {
@@ -49,5 +48,4 @@ if(page = 1){
     }
     $("#insert-here").empty()
     getMovies(page)
-    console.log(page)
   })

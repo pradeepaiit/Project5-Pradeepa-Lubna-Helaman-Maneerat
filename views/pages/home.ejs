@@ -18,7 +18,12 @@
   </head>
   <body>
       <!--Header-->
-    <%- include('../partials/header')%>
+      <%if (firstName){%>
+      <%- include('../partials/header2')%>
+      <%} else {%>
+      <%- include('../partials/header1')%>
+      <% }%>
+    
     <main>
       <div class="flex">
         <div class="home-nxt"><button id="previous-page">Previous</button></div>
