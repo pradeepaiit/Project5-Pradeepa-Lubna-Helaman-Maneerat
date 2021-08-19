@@ -15,6 +15,9 @@
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -27,11 +30,21 @@
 
             <main>
 
-              <div class="genre-select">
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 Genre
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="/thriller">Thriller</a>
+                  <a class="dropdown-item" href="/comedy">Comedy</a>
+                  <a class="dropdown-item" href="/crime">Crime</a>
+                </div>
+              </div>
+              <!-- <div class="genre-select">
                 <a class="genre" href="/thriller"><strong>Thriller</strong></a>
                 <a class="genre" href="/comedy"><strong>Comedy</strong></a>
                 <a class="genre" href="/crime"><strong>Crime</strong></a>
-              </div>
+              </div> -->
 
 
 
