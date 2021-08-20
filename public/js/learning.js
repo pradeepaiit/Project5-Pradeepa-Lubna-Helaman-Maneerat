@@ -12,7 +12,7 @@ function getMovies(page) {
         const movie = movies[i]
         const movieHTML = $("<div>", { class: "movie-tile" })
           .append(`<h5 class="movie-title">${movie.title}`)
-          .append(`<p class="ave-rating">Overall rating (# votes):</p>`)
+          .append(`<p class="ave-rating"><span class="fa fa-star checked"></span>&nbsp( ) from # votes</p>`)
           .append(
             `<img src="${image_URL + movie.poster_path}" alt="${movie.title
             } poster">`
