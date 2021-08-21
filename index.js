@@ -1,5 +1,6 @@
 require('dotenv').config()
 const express = require('express')
+const morgan = require('morgan')
 // might need db connection
 const ejs = require('ejs')
 const db = require('./database')
@@ -15,6 +16,9 @@ app.set('views', './views')
 
 // static folder
 app.use(express.static('public'))
+
+// morgan config
+app.use(morgan('dev'))
 
 //Session
 const session = require("express-session")
@@ -58,6 +62,10 @@ app.use("/", thrillerRouter)
 //comedy route
 const comedyRouter = require("./routes/comedy")
 app.use("/", comedyRouter)
+
+// Individual Movie route
+const movieRouter = require('./routes/movie')
+app.use('/movie', movieRouter)
 
 app.listen(PORT, () => {
   console.log(`App is listening to: http://localhost:${PORT}`)
