@@ -16,7 +16,14 @@
 </head>
 <body>
 <main>
-
+  <form>
+    <label for="rating">Rate the movie</label>
+    <select id="rating" name="rating">
+<% for(let i=1; i<=10; i++) { %>
+<option value="<%= i %>"><%= i %></option>"
+<%}%>
+    </select>
+  </form>
 </main>
 </body>
 </html>
