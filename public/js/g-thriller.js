@@ -13,8 +13,8 @@ $.getJSON(base_URL + "/discover/movie" + api_key + 53)
                     .append(`<h5 class="movie-title">${movie.title}`)
                     .append(`<p class="ave-rating"><span class="fa fa-star checked"></span>&nbsp( ) from # votes</p>`)
                     .append(
-                        `<img src="${image_URL + movie.poster_path}" alt="${movie.title
-                        } poster">`
+                        `<a href="/movie/${movie.id}"><img src="${image_URL + movie.poster_path}" alt="${movie.title
+                        } poster"></a>`
                     )
 
                 $("#insert-here").append(movieHTML)
