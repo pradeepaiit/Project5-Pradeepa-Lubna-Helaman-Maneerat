@@ -186,7 +186,7 @@ h1 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-animation-name: shimmer;
-  -webkit-animation-duration: 2.2s;
+  -webkit-animation-duration: 1s;
   -webkit-animation-iteration-count: infinite;
   -webkit-background-size: 4rem 100%; /*50px*/
   

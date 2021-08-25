@@ -21,6 +21,7 @@
     "express-session": "^1.17.2",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.12",
-    "pg-promise": "^10.11.0"
+    "pg-promise": "^10.11.0",
+    "session": "^0.1.0"
   }
 }

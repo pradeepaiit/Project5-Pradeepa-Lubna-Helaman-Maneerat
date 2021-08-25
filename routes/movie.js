@@ -1,11 +1,14 @@
 const express = require('express')
 const db = require('../database')
 const router = express.Router()
+
 router.get('/:id', (req, res) => {
     res.render('pages/movie', {
-        movie_id: req.params.id        
+        movie_id: req.params.id,
+        firstName: req.session.firstname  
 
     })
+    // console.log(firstName)
 })
 router.post('/:id', (req,res) =>
 {
