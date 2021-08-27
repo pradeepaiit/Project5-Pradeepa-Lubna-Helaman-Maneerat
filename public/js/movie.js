@@ -9,26 +9,15 @@ $.getJSON(base_URL + "/movie/"  + movie_id + api_key)
 $("main")
 // console.log(data)
 .prepend(`<p class="movie-overview">${data.overview}</p>`)
-.prepend(`<p class="averating"></p>`)
-.prepend(`<img class="dmovie-poster" src="${image_URL + data.poster_path}" alt="">`)
-.prepend(`<h1 class="dmovie-title">${data.title}</h1>`)
+.prepend(`<img class="movie-poster" src="${image_URL + data.poster_path}" alt="">`)
+.prepend(`<h1 class="movie-title">${data.title}</h1>`)
 
-$.get(`http://localhost:5000/rating/${data.id}`, function (data) {
-    console.log(data)
-    if (data.avg) {
-      $(".averating").prepend(`<p class="ave-rating"><span class="fa fa-star checked"></span>&nbsp(${data.avg}) from ${data.count} users</p>`)
-  
-    }else {
-      $(".averating").prepend(`<p class="ave-rating"><span class="fa fa-star checked"></span>&nbsp(0.0) from 0 users</p>`)
-    }
-  });
+
   })
   
 .catch(err => {
     console.log(err)
   })
-
-
 $("form").submit(e => {
   e.preventDefault()
 
@@ -49,3 +38,4 @@ rating: $("#rating").val()
       $("main").append("<p class='error'>" + err.statusText + "</p>")
 })
 })
+
