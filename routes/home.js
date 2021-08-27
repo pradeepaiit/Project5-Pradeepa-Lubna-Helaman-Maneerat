@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
     firstName: req.session.firstname
   })
 })
-
+//Storage for average rating and # of users who rated
 router.get('/rating/:id', (req, res) => {
   db.oneOrNone('SELECT COUNT(rating), AVG(rating)::numeric(10, 1) FROM ratings WHERE movie_id = $1;', [req.params.id])
   .then((average) => {
