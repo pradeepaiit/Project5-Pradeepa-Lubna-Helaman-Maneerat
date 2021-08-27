@@ -2,7 +2,7 @@ const base_URL = "https://api.themoviedb.org/3"
 const api_key = "?api_key=1cb0f23eb9774f53a3ad114e334ff695&with_genres="
 const image_URL = "https://image.tmdb.org/t/p/w185"
 
-$.getJSON(base_URL + "/discover/movie" + api_key + 35)
+$.getJSON(base_URL + "/discover/movie" + api_key + 35)//Filter movies for Comedy movies
     .then(data => {
         console.log(data)
 

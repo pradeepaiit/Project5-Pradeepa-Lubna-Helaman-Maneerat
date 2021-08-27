@@ -1,8 +1,6 @@
 const base_URL = "https://api.themoviedb.org/3"
 const api_key = "?api_key=1cb0f23eb9774f53a3ad114e334ff695"
 const image_URL = "https://image.tmdb.org/t/p/w185"
-//const db = require('.../database')
-
 
 function getMovies(page) {
   $.getJSON(base_URL + "/discover/movie" + api_key + "&page=" + page)
@@ -17,11 +15,11 @@ function getMovies(page) {
             `<a href="/movie/${movie.id}"><img src="${image_URL + movie.poster_path}" alt="${movie.title
             } poster"></a>`
           )
+          //Display data for average rating and # of users who rated
           $.get(`http://localhost:5000/rating/${movie.id}`, function (data) {
             console.log(data)
             if (data.avg) {
               $(movieHTML).append(`<p class="ave-rating"><span class="fa fa-star checked"></span>&nbsp(${data.avg}) from ${data.count} users</p>`)
-          
             }else {
               $(movieHTML).append(`<p class="ave-rating"><span class="fa fa-star checked"></span>&nbsp(0.0) from 0 users</p>`)
             }
