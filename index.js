@@ -63,6 +63,10 @@ app.use("/", thrillerRouter)
 const comedyRouter = require("./routes/comedy")
 app.use("/", comedyRouter)
 
+//search route
+const searchRouter = require("./routes/search")
+app.use("/", searchRouter)
+
 // Individual Movie route
 const movieRouter = require('./routes/movie')
 app.use('/movie', movieRouter)

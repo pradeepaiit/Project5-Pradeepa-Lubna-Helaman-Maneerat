@@ -108,7 +108,7 @@
 
  .home-nxt {
    margin-top: 20px;
-padding:10px;
+  padding:10px;
  }
 
  .flex {
@@ -271,4 +271,12 @@ form {
 .sign-rate:hover {
   text-decoration: none;
   color:white;
+}
+
+/* search form */
+
+#searchForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
